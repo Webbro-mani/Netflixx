@@ -1,0 +1,14 @@
+* {
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    border: border-box;
+}
+
+
+/** netflix-conaiter**/
+
+.container {
+    height: 12px;
+    background-color: rgb(199, 60, 60);
+    color: rgb(50, 219, 28);
+}
