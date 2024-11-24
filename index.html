@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        /** netflix-conaiter**/
+
+        .netflix-container {
+            height: 700px;
+            background-image: url("marvel.jpeg");
+            width: 100%;
+            align-items: center;
+            margin-bottom: 0;
+            justify-content: space-evenly;
+            background-position: center center;
+            background-repeat: none;
+            background-size: max(1200px, 100vw);
+            position: relative;
+        }
+
+        .netflix-box {
+            height: 700px;
+            width: 100%;
+            opacity: 0.69;
+            position: absolute;
+            top: 0;
+            background-color: black;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100vw;
+            margin: auto;
+            justify-content: space-around;
+            height: 62px;
+        }
+
+        nav img {
+            color: red;
+            width: 100px;
+            position: relative;
+            font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+            z-index: 10;
+
+        }
+
+        nav button {
+            position: relative;
+            z-index: 10;
+            font-style: normal;
+            outline: none;
+            font-size: 15px;
+            cursor: pointer;
+            margin-left: 7px;
+
+        }
+
+        .fa-solid {
+            padding-left: 10px;
+        }
+
+        .fa-language {
+            padding-right: 10px;
+            padding-left: 0;
+        }
+
+        .netflix-hero {
+            color: white;
+            height: calc(100% - 62px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            font-family: "Martel Sans", sans-serif;
+            gap: 23px;
+            padding: 0 30px;
+        }
+
+        .netflix-hero> :nth-child(1) {
+            font-family: "poppins", sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            font-size: 40px;
+            padding-right: 35px;
+        }
+
+        .netflix-hero> :nth-child(2) {
+            font-weight: 400;
+            font-size: 24px;
+            text-align: center;
+            padding-right: 35px;
+        }
+
+        .netflix-hero> :nth-child(3) {
+            font-weight: 400;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            text-align: center;
+            padding-right: 35px;
+        }
+
+        .shapration {
+            height: 5px;
+            background-color: gray;
+        }
+
+        .btn {
+            padding: 2px 10px;
+            color: white;
+            background-color: transparent;
+            border: 1px solid rgb(255 255 223 / 42%);
+            height: 32px;
+            border-radius: 4px;
+
+        }
+
+        .btn-red {
+            background-color: rgb(229, 9, 20);
+            color: rgb(255, 255, 255);
+            padding: 8px 20px 24px 20px;
+            font-size: 15px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-red-sm {
+            background-color: red;
+            color: white;
+        }
+
+        input {
+            padding: 7px 101px 8px 14px;
+            font-size: 15px;
+            border-radius: 4px;
+            background-color: rgba(23, 23, 23, 0.7);
+            color: white;
+            font-weight: 400;
+            border: 1px solid rgb(255 255 223 / 42%)
+        }
+
+        .hero-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+
+        /** section **/
+
+        .container {
+            width: 100%;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        .text-col {
+            width: 50%;
+        }
+
+        .first {
+            display: flex;
+            justify-content: center;
+            max-width: 85%;
+            margin: auto;
+            color: white;
+            align-items: center;
+
+        }
+
+        .sec-image {
+            position: relative;
+
+        }
+
+        .sec-image img {
+            width: 30vw;
+            position: relative;
+            z-index: 10;
+
+
+        }
+
+        .sec-image video {
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            width: 60%;
+            right: 0;
+        }
+
+        .first-image {
+            position: relative;
+
+        }
+
+        .first-image img {
+            width: 30vw;
+            position: relative;
+            z-index: 10;
+
+
+        }
+
+        .first-image video {
+            position: absolute;
+            top: 80px;
+            left: 56px;
+            width: 80%;
+            right: 0;
+            
+        }
+
+        section.first>div {
+            display: flex;
+            flex-direction: column;
+            padding: 34px 0px;
+        }
+
+        section.first>div :nth-child(1) {
+            font-size: 48px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+
+        }
+
+        section.first>div :nth-child(2) {
+            font-size: 24px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        section.first>div :nth-child(3) {
+            font-size: 24px;
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+        }
+
+
+        section.first>div :nth-child(4) {
+            font-size: 24px;
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+        }
+
+        /**Question planel**/
+        .box {
+            display: flex;
+            padding: 24px;
+            background-color: #80808038;
+            margin: auto;
+            max-width: 80%;
+            margin: 10px auto;
+            justify-content: space-between;
+            font-size: 1.5rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .box:hover {
+            background-color: #4c4b4b;
+        }
+
+        .faq {
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 150px;
+
+        }
+
+        .faq h2 {
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        /** footer**/
+        .footer {
+            width: 100%;
+            padding: 50px 12% 20px;
+        }
+
+        .footer .row {
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            padding: 20px 0;
+        }
+
+        .footer .row .col a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 10px;
+            font-weight: 300;
+            font-family: "Poppins", sans-serif;
+            font-size: 1rem;
+        }
+
+        .footer h6 {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .footer p {
+            font-size: 0.85rem;
+            font-weight: 300;
+            margin-top: 20px;
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        /** media quary in desktop size**/
+        @media screen and (max-width: 1300px) {
+
+
+            .first-image {
+                position: relative;
+
+            }
+
+            .first-image img {
+                width: 30vw;
+                position: relative;
+                z-index: 10;
+            }
+
+            .first-image video {
+                position: absolute;
+                top: 80px;
+                left: 40px;
+                width: 80%;
+                right: 0;
+            }
+
+            .sec-image {
+                position: relative;
+
+            }
+
+            .sec-image img {
+                width: 30vw;
+                position: relative;
+                z-index: 10;
+
+
+            }
+
+            .sec-image video {
+                position: absolute;
+                top: 70px;
+                left: 55px;
+                width: 63%;
+                right: 0;
+            }
+
+            .footer .row {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /** media quary in tablet size**/
+        @media screen and (max-width: 768px) {
+
+            .first {
+                flex-direction: column;
+            }
+
+            .text-col {
+                width: 100%;
+            }
+
+            #text {
+                font-size: 2rem;
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                font-style: normal;
+                text-align: center;
+                display: block;
+            }
+
+            section.first>div {
+                display: flex;
+                flex-direction: column;
+                padding: 10px 0px;
+                display: inline-block;
+                text-align: center;
+            }
+
+            #second-line {
+                font-size: 14px;
+                font-family: "Poppins", sans-serif;
+                font-style: normal;
+                text-align: center;
+                font-weight: 500;
+
+            }
+
+            .faq h2 {
+                text-align: center;
+                padding-top: 50px;
+                padding-bottom: 20px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                font-style: normal;
+                font-size: 2rem;
+            }
+
+
+            .first-image {
+                position: relative;
+
+            }
+
+            .first-image img {
+                width: 100%;
+                position: relative;
+                z-index: 10;
+
+
+            }
+
+            .first-image video {
+                position: absolute;
+                top: 80px;
+                left: 70px;
+                width: 80%;
+                right: 0;
+            }
+
+            .sec-image {
+                position: relative;
+
+            }
+
+            .sec-image img {
+                width: 100%;
+                position: relative;
+                z-index: 10;
+
+
+            }
+
+            .sec-image video {
+                position: absolute;
+                top: 80px;
+                left: 100px;
+                width: 65%;
+                right: 0;
+            }
+
+
+        }
+
+        /** phone size responsive **/
+        @media screen and (max-width: 425px) {
+            .hero-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .first {
+                flex-direction: column;
+            }
+
+            .netflix-hero> :nth-child(1) {
+                font-family: "poppins", sans-serif;
+                font-weight: bolder;
+                text-align: center;
+                font-size: 30px;
+                padding-right: 35px;
+            }
+
+            .netflix-hero> :nth-child(2) {
+                font-weight: 400;
+                font-size: 20px;
+                text-align: center;
+                padding-right: 35px;
+            }
+
+            .netflix-hero> :nth-child(3) {
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 1.5;
+                text-align: center;
+                padding-right: 35px;
+            }
+
+            .netflix-container {
+                height: 520px;
+                background-image: url(marvel.jpeg);
+                width: 100%;
+                align-items: center;
+                margin-bottom: 0;
+                justify-content: space-evenly;
+                background-position: center center;
+                background-repeat: none;
+                background-size: max(1200px, 100vw);
+                position: relative;
+            }
+
+            .netflix-box {
+                height: 520px;
+                width: 100%;
+                opacity: 0.69;
+                position: absolute;
+                top: 0;
+                background-color: black;
+            }
+
+            .first-image {
+                position: relative;
+
+            }
+
+            .first-image img {
+                width: 130%;
+                position: relative;
+                z-index: 10;
+                margin-left: -40px;
+            }
+
+            .first-image video {
+                position: absolute;
+                top: 59px;
+                left: 7px;
+                width: 100%;
+                right: 0;
+            }
+
+            .text-col {
+                width: 120%;
+            }
+
+
+            #text {
+                font-size: 1.8rem;
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                font-style: normal;
+                text-align: center;
+                display: block;
+            }
+
+            .sec-image {
+                position: relative;
+
+            }
+
+            .sec-image img {
+                width: 130%;
+                position: relative;
+                z-index: 10;
+                margin-left: -40px;
+            }
+
+            .sec-image video {
+                position: absolute;
+                top: 55px;
+                left: 20px;
+                width: 85%;
+                right: 0;
+            }
+
+            .box {
+                font-size: 1.1rem;
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+
+
+        }
+
+        /** phone size responsive **/
+        @media screen and (max-width: 375px) {
+            .first {
+                flex-direction: column;
+            }
+
+
+            .first-image video {
+                position: absolute;
+                top: 55px;
+                left: 0px;
+                width: 100%;
+                right: 0;
+            }
+
+            .sec-image video {
+                position: absolute;
+                top: 50px;
+                left: 10px;
+                width: 85%;
+                right: 0;
+            }
+
+            .box {
+                font-size: 0.99rem;
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            .footer {
+                width: 100%;
+                padding: 50px 20px;
+            }
+
+            .footer .row {
+                gap: 20px;
+                padding: 20px 0;
+            }
+        }
+
+        /** phone size responsive **/
+        @media screen and (max-width: 320px) {
+            .first {
+                flex-direction: column;
+            }
+
+            input {
+                padding: 15px 30px 15px 14px;
+                font-size: 15px;
+                font-weight: 600;
+            }
+
+            .text-col {
+                width: 141%;
+            }
+
+            #text {
+                font-size: 2rem;
+                font-weight: 700;
+                padding-bottom: 15px;
+            }
+
+            #second-line {
+                font-size: 1.125rem;
+            }
+
+            .first-image img {
+                width: 140%;
+                margin-left: -35px;
+            }
+
+            .first-image video {
+                position: absolute;
+                top: 50px;
+                left: -1px;
+                width: 105%;
+                right: 0;
+
+            }
+
+            .sec-image img {
+                width: 140%;
+                margin-left: -40px;
+            }
+
+            .sec-image video {
+                position: absolute;
+                top: 45px;
+                left: 5px;
+                width: 88%;
+                right: 0;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="netflix-container">
+            <nav>
+                <span><img src="Netflix_Logo_PMS.png" alt="" height="50px"></span>
+                <div>
+                    <button class="btn"><i class="fa-solid fa-language"></i>English<i
+                            class="fa-solid fa-caret-down"></i></button>
+                    <button class="btn btn-red-sm">Sign In</button>
+                </div>
+            </nav>
+            <div class="netflix-box">
+            </div>
+            <div class="netflix-hero">
+                <span>Unlimited movies, TV show and more</span>
+                <span>watch anywhere, Cancel anytime.</span>
+                <span>Ready to Watch? Enter your email to create or restart your membership.</span>
+
+                <div class="hero-button">
+                    <input type="text" placeholder="Email-address">
+                    <button class="btn btn-red" type="submit">Get Started &gt</button>
+                </div>
+            </div>
+            <div class="shapration"></div>
+        </div>
+        <div class="container">
+            <section class="first first-part">
+                <div class="text-col">
+                    <span id="text">Enjoy on your TV</span>
+                    <span id="second-line">Watch on smart TVs, PlayStation, Xbox,</span><span
+                        id="second-line">Chromecast, Apple TV, Blu-ray players
+                        and</span><span id="second-line">more</span>
+                </div>
+                <div class="first-image">
+                    <img src="video_netflex1.png" alt="">
+                    <video src="video.m4v" autoplay loop muted></video>
+                </div>
+
+            </section>
+        </div>
+
+        <div class="shapration"></div>
+        <div class="container">
+            <section class="first second-part">
+                <div class="sec-image">
+                    <img src="mobile-0819 - Copy.jpg" alt="">
+                </div>
+
+                <div class="text-col">
+                    <span id="text" class="test">Download your shows
+                        to watch offline</span><span id="second-line">Save your favourites easily and always
+                        have</span><span id="second-line">something to
+                        watch.</span>
+                </div>
+
+            </section>
+        </div>
+
+        <div class="shapration"></div>
+        <div class="container">
+            <section class="first third-part">
+                <div class="text-col">
+                    <span id="text">Watch everywhere</span>
+                    <span id="second-line"> Stream unlimited movies and TV shows on</span><span id="second-line">your
+                        phone, tablet, laptop, and TV.</span>
+                </div>
+                <div class="sec-image">
+                    <img src="video_netflix3.png" alt="">
+                    <video src="video-devices-in.m4v" autoplay loop muted></video>
+                </div>
+
+            </section>
+        </div>
+        <div class="shapration"></div>
+        <div class="container">
+            <section class="first fourth-part">
+                <div class="sec-image">
+                    <img src="kids_netflix.png" alt="">
+                </div>
+                <div class="text-col">
+                    <span id="text">Create profiles for kids</span>
+                    <span id="second-line">Send children on adventures with their</span><span id="second-line">favourite
+                        characters in a space made just
+                        for</span><span id="second-line">them—free with your membership.</span>
+                </div>
+            </section>
+        </div>
+        <div class="shapration"></div>
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="box">
+                <span>What is Netflix?</span>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="box">
+                <span>How Much Does Netflix Cost?</span>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="box">
+                <span>Where can I watch?</span>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="box">
+                <span>How do I Cancel?</span>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="box">
+                <span>what can I watch on Netflix?</span>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+            <div class="box">
+                <span>Is Netflix is good for kids?</span>
+                <i class="fa-solid fa-plus"></i>
+            </div>
+        </section>
+        <div class="shapration"></div>
+    </header>
+
+    <footer>
+        <div class="footer">
+            <h6 style="color: rgba(255,255,255,0.7)">Question? Call 000-000-000-000</h6>
+            <div class="row">
+                <div class="col">
+                    <a href="#">FAQ</a>
+                    <a href="#">Investor Relations</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Speed Test</a>
+                </div>
+                <div class="col">
+                    <a href="#"> Help Centre</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Cookie Preferences</a>
+                    <a href="#">Legal Notices</a>
+                </div>
+                <div class="col">
+                    <a href="#"> Account</a>
+                    <a href="#">Ways to Watch</a>
+                    <a href="#">Corporate Information</a>
+                    <a href="#">Only on Netflix</a>
+                </div>
+                <div class="col">
+                    <a href="#">Media Centre</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+            <button class="btn"><i class="fa-solid fa-language"></i>English<i
+                    class="fa-solid fa-caret-down"></i></button>
+            <p style="color: rgba(255,255,255,0.7)">Netflix India</p>
+        </div>
+    </footer>
+    <!--scroll reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="netflix.js"></script>
+</body>
+
+</html>
